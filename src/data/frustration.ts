@@ -19,12 +19,6 @@ export interface JourneyStep {
   outcome?: "negative" | "neutral";
 }
 
-export interface Stat {
-  value: string;
-  label: string;
-  sublabel?: string;
-}
-
 export const heroQuote: Quote = {
   text: "I spent three hours trying to book a hair salon in Tokyo. Every site was in Japanese, Google Translate butchered the menus, and I ended up just walking into a random place near my hotel. They didn't speak English, I couldn't explain what I wanted, and I left looking nothing like the photo I showed them.",
   source: "r/JapanTravel",
@@ -158,25 +152,3 @@ export const journeySteps: JourneyStep[] = [
   },
 ];
 
-export const stats: Stat[] = [
-  {
-    value: "31.9M",
-    label: "Foreign visitors to Japan in 2024",
-    sublabel: "Record high, still growing",
-  },
-  {
-    value: "¥37,400",
-    label: "Avg international salon booking",
-    sublabel: "2.1x higher than domestic average",
-  },
-  {
-    value: "0",
-    label: "English-first salon booking platforms",
-    sublabel: "for Tokyo — the world's largest city",
-  },
-  {
-    value: "73%",
-    label: "Tourists who want a salon visit",
-    sublabel: "but don't book due to friction",
-  },
-];

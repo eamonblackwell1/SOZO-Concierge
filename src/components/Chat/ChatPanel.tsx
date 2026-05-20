@@ -2,10 +2,9 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Loader2, ListChecks, Shield, Sparkles } from "lucide-react";
+import { Send, Loader2, Shield, Sparkles, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
 import { type Block, type BlockChatMessage, parseBlocksFromResponse } from "@/lib/blocks";
 import { getGreeting } from "@/lib/system-prompt";
 import { stylists, type Stylist } from "@/data/stylists";
@@ -59,6 +58,76 @@ function UserBubble({ content }: { content: string }) {
   );
 }
 
+function MobileStylistCard({
+  stylist,
+  onSelect,
+}: {
+  stylist: Stylist;
+  onSelect: (stylist: Stylist) => void;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="md:hidden"
+    >
+      <button
+        onClick={() => onSelect(stylist)}
+        className="w-full text-left rounded-2xl border bg-gradient-to-r from-sozo-cream/40 to-background p-3 flex items-center gap-3 hover:shadow-md transition-shadow"
+      >
+        <div className="w-12 h-12 rounded-xl bg-sozo-blue/10 flex items-center justify-center shrink-0 overflow-hidden">
+          {stylist.photo_url ? (
+            <img src={stylist.photo_url} alt={stylist.name} className="w-full h-full object-cover" />
+          ) : (
+            <span className="text-lg">✂️</span>
+          )}
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-medium truncate">{stylist.name}</p>
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <MapPin className="h-3 w-3 text-muted-foreground" />
+            <span className="text-xs text-muted-foreground truncate">
+              {stylist.salon}
+            </span>
+          </div>
+          <div className="flex items-center gap-1 mt-0.5">
+            <Star className="h-3 w-3 text-sozo-gold fill-sozo-gold" />
+            <span className="text-xs text-muted-foreground">
+              {stylist.google_review_avg_english_only}
+            </span>
+          </div>
+        </div>
+        <div className="text-xs text-sozo-blue font-medium shrink-0">View →</div>
+      </button>
+    </motion.div>
+  );
+}
+
+function MobileStylistList({
+  stylists: stylistList,
+  onSelect,
+}: {
+  stylists: Stylist[];
+  onSelect: (stylist: Stylist) => void;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="md:hidden space-y-2"
+    >
+      <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground px-1">
+        Your Shortlist
+      </p>
+      {stylistList.map((s) => (
+        <MobileStylistCard key={s.stylist_id} stylist={s} onSelect={onSelect} />
+      ))}
+    </motion.div>
+  );
+}
+
 function AssistantMessage({
   message,
   isStreaming,
@@ -100,19 +169,22 @@ function AssistantMessage({
   );
 }
 
+type MobileInlineItem =
+  | { type: "shortlist"; stylists: Stylist[]; id: string }
+  | { type: "focused"; stylist: Stylist; id: string };
+
 export function ChatPanel() {
   const [messages, setMessages] = useState<BlockChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
   const [streamingText, setStreamingText] = useState("");
-  const [version, setVersion] = useState<"B" | "C">("C");
-  const [quizMode, setQuizMode] = useState(false);
   const [contextPane, setContextPane] = useState<ContextPaneState>({
-    mode: "empty",
+    mode: "intro",
   });
   const [bookingStylist, setBookingStylist] = useState<Stylist | null>(null);
   const [hasStarted, setHasStarted] = useState(false);
+  const [mobileInlineItems, setMobileInlineItems] = useState<MobileInlineItem[]>([]);
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -125,40 +197,28 @@ export function ChatPanel() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, isLoading, isStreaming, streamingText, scrollToBottom]);
+  }, [messages, isLoading, isStreaming, streamingText, mobileInlineItems, scrollToBottom]);
 
-  const initGreeting = useCallback(
-    (v: "B" | "C") => {
-      const greetingJson = getGreeting(v);
-      const blocks = parseBlocksFromResponse(greetingJson);
-      setMessages([
-        {
-          id: `greeting-${Date.now()}`,
-          role: "assistant",
-          content: greetingJson,
-          blocks,
-          timestamp: Date.now(),
-        },
-      ]);
-      setHasStarted(true);
-    },
-    []
-  );
+  const initGreeting = useCallback(() => {
+    const greetingJson = getGreeting("C");
+    const blocks = parseBlocksFromResponse(greetingJson);
+    setMessages([
+      {
+        id: `greeting-${Date.now()}`,
+        role: "assistant",
+        content: greetingJson,
+        blocks,
+        timestamp: Date.now(),
+      },
+    ]);
+    setHasStarted(true);
+  }, []);
 
   useEffect(() => {
     if (!hasStarted) {
-      initGreeting(version);
+      initGreeting();
     }
-  }, [hasStarted, version, initGreeting]);
-
-  const handleVersionToggle = (newVersion: "B" | "C") => {
-    setVersion(newVersion);
-    setMessages([]);
-    setHasStarted(false);
-    setBookingStylist(null);
-    setContextPane({ mode: "empty" });
-    setTimeout(() => initGreeting(newVersion), 50);
-  };
+  }, [hasStarted, initGreeting]);
 
   const updateContextFromBlocks = (blocks: Block[]) => {
     for (const block of blocks) {
@@ -173,6 +233,10 @@ export function ChatPanel() {
             reasoning: block.reasoning,
             keyFactors: block.key_factors,
           });
+          setMobileInlineItems((prev) => [
+            ...prev,
+            { type: "focused", stylist, id: `focused-${Date.now()}` },
+          ]);
           return;
         }
       }
@@ -182,6 +246,10 @@ export function ChatPanel() {
           .filter((s): s is Stylist => s !== undefined);
         if (matched.length > 0) {
           setContextPane({ mode: "shortlist", stylists: matched });
+          setMobileInlineItems((prev) => [
+            ...prev,
+            { type: "shortlist", stylists: matched, id: `shortlist-${Date.now()}` },
+          ]);
           return;
         }
       }
@@ -190,6 +258,10 @@ export function ChatPanel() {
 
   const sendMessage = async (content: string) => {
     if (!content.trim() || isLoading) return;
+
+    if (contextPane.mode === "intro") {
+      setContextPane({ mode: "exploring" });
+    }
 
     const userMsg: BlockChatMessage = {
       id: `user-${Date.now()}`,
@@ -214,7 +286,7 @@ export function ChatPanel() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: apiMessages, version }),
+        body: JSON.stringify({ messages: apiMessages, version: "C" }),
       });
 
       if (!response.ok) throw new Error("Chat request failed");
@@ -333,6 +405,50 @@ export function ChatPanel() {
     );
   }
 
+  const messageAndInlineItems = () => {
+    const items: React.ReactNode[] = [];
+
+    let inlineIdx = 0;
+    for (const msg of messages) {
+      if (msg.role === "user") {
+        items.push(<UserBubble key={msg.id} content={msg.content} />);
+      } else {
+        items.push(
+          <AssistantMessage
+            key={msg.id}
+            message={msg}
+            onSuggestionClick={handleSuggestionClick}
+            onStylistSelect={handleStylistSelect}
+            onStylistBook={handleBook}
+          />
+        );
+        if (inlineIdx < mobileInlineItems.length) {
+          const item = mobileInlineItems[inlineIdx];
+          if (item.type === "shortlist") {
+            items.push(
+              <MobileStylistList
+                key={item.id}
+                stylists={item.stylists}
+                onSelect={handleStylistSelect}
+              />
+            );
+          } else {
+            items.push(
+              <MobileStylistCard
+                key={item.id}
+                stylist={item.stylist}
+                onSelect={handleStylistSelect}
+              />
+            );
+          }
+          inlineIdx++;
+        }
+      }
+    }
+
+    return items;
+  };
+
   return (
     <div className="flex flex-col h-full">
       {/* Top bar */}
@@ -342,44 +458,6 @@ export function ChatPanel() {
             <Shield className="h-2.5 w-2.5 text-sozo-blue" />
             SOZO Inside
           </Badge>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1 rounded-lg bg-muted p-0.5">
-            <button
-              onClick={() => handleVersionToggle("B")}
-              className={cn(
-                "px-2 py-0.5 rounded-md text-[11px] font-medium transition-all",
-                version === "B"
-                  ? "bg-background shadow-sm text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              v.B
-            </button>
-            <button
-              onClick={() => handleVersionToggle("C")}
-              className={cn(
-                "px-2 py-0.5 rounded-md text-[11px] font-medium transition-all",
-                version === "C"
-                  ? "bg-background shadow-sm text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              v.C
-            </button>
-          </div>
-          <button
-            onClick={() => setQuizMode(!quizMode)}
-            className={cn(
-              "flex items-center gap-1 px-2 py-1 rounded-lg text-[11px] font-medium transition-all",
-              quizMode
-                ? "bg-sozo-blue/10 text-sozo-blue"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted"
-            )}
-          >
-            <ListChecks className="h-3 w-3" />
-            Quiz
-          </button>
         </div>
       </div>
 
@@ -391,19 +469,7 @@ export function ChatPanel() {
           <div className="flex-1 overflow-y-auto" ref={scrollRef}>
             <div className="max-w-2xl mx-auto p-4 space-y-5 pb-4">
               <AnimatePresence>
-                {messages.map((msg) =>
-                  msg.role === "user" ? (
-                    <UserBubble key={msg.id} content={msg.content} />
-                  ) : (
-                    <AssistantMessage
-                      key={msg.id}
-                      message={msg}
-                      onSuggestionClick={handleSuggestionClick}
-                      onStylistSelect={handleStylistSelect}
-                      onStylistBook={handleBook}
-                    />
-                  )
-                )}
+                {messageAndInlineItems()}
               </AnimatePresence>
 
               {isStreaming && streamingText && messages[messages.length - 1]?.role === "user" && (
@@ -464,8 +530,8 @@ export function ChatPanel() {
           </div>
         </div>
 
-        {/* Context pane -- desktop only */}
-        <div className="hidden md:block w-[380px] shrink-0">
+        {/* Context pane -- desktop only, widened to 420px */}
+        <div className="hidden md:block w-[420px] shrink-0">
           <ContextPane
             state={contextPane}
             onStylistSelect={handleStylistSelect}

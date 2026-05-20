@@ -4,7 +4,7 @@ export const inspirationImages: InspirationImage[] = [
   // ── Hairstyle inspiration (~20) ──────────────────────────────────
   {
     id: "hair-layered-bob",
-    url: "/inspiration/hair-layered-bob.jpg",
+    url: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&h=600&fit=crop&q=80",
     alt: "Textured layered bob with soft movement",
     category: "hairstyle",
     tags: ["bob", "layered", "textured", "medium"],
@@ -32,14 +32,14 @@ export const inspirationImages: InspirationImage[] = [
   },
   {
     id: "hair-long-layers",
-    url: "/inspiration/hair-long-layers.jpg",
+    url: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=600&fit=crop&q=80",
     alt: "Long flowing layers with face-framing pieces",
     category: "hairstyle",
     tags: ["long", "layers", "face-framing", "feminine"],
   },
   {
     id: "hair-curtain-bangs",
-    url: "/inspiration/hair-curtain-bangs.jpg",
+    url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=600&fit=crop&q=80",
     alt: "Soft curtain bangs with middle part",
     category: "hairstyle",
     tags: ["bangs", "curtain", "soft", "versatile"],
@@ -60,7 +60,7 @@ export const inspirationImages: InspirationImage[] = [
   },
   {
     id: "hair-beachy-waves",
-    url: "/inspiration/hair-beachy-waves.jpg",
+    url: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&h=600&fit=crop&q=80",
     alt: "Effortless beachy waves with natural texture",
     category: "hairstyle",
     tags: ["waves", "beachy", "texture", "casual"],
@@ -146,21 +146,21 @@ export const inspirationImages: InspirationImage[] = [
   // ── Color direction (~12) ────────────────────────────────────────
   {
     id: "color-balayage-honey",
-    url: "/inspiration/color-balayage-honey.jpg",
+    url: "https://images.unsplash.com/photo-1620122303020-87ec826cf70d?w=400&h=600&fit=crop&q=80",
     alt: "Honey blonde balayage on brunette base",
     category: "color",
     tags: ["balayage", "honey", "blonde", "warm"],
   },
   {
     id: "color-ash-blonde",
-    url: "/inspiration/color-ash-blonde.jpg",
+    url: "https://images.unsplash.com/photo-1595959183082-7b570b7e1e2b?w=400&h=600&fit=crop&q=80",
     alt: "Cool-toned ash blonde all over",
     category: "color",
     tags: ["ash", "blonde", "cool", "platinum"],
   },
   {
     id: "color-copper-autumn",
-    url: "/inspiration/color-copper-autumn.jpg",
+    url: "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?w=400&h=600&fit=crop&q=80",
     alt: "Rich copper with auburn undertones",
     category: "color",
     tags: ["copper", "auburn", "warm", "rich"],
@@ -232,7 +232,7 @@ export const inspirationImages: InspirationImage[] = [
   // ── Neighborhood feel (~10) ──────────────────────────────────────
   {
     id: "hood-harajuku",
-    url: "/inspiration/hood-harajuku.jpg",
+    url: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=400&h=600&fit=crop&q=80",
     alt: "Harajuku — Takeshita Street energy, youth culture hub",
     category: "neighborhood",
     tags: ["harajuku", "vibrant", "youth", "creative"],
@@ -246,7 +246,7 @@ export const inspirationImages: InspirationImage[] = [
   },
   {
     id: "hood-omotesando",
-    url: "/inspiration/hood-omotesando.jpg",
+    url: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=400&h=600&fit=crop&q=80",
     alt: "Omotesando — Tokyo's Champs-Élysées, flagship stores",
     category: "neighborhood",
     tags: ["omotesando", "luxury", "fashion", "architecture"],
@@ -260,7 +260,7 @@ export const inspirationImages: InspirationImage[] = [
   },
   {
     id: "hood-shibuya",
-    url: "/inspiration/hood-shibuya.jpg",
+    url: "https://images.unsplash.com/photo-1532236204992-f5e82c553f7e?w=400&h=600&fit=crop&q=80",
     alt: "Shibuya — iconic crossing, neon energy, urban pulse",
     category: "neighborhood",
     tags: ["shibuya", "urban", "energy", "iconic"],
