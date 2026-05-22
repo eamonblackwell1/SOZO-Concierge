@@ -4,6 +4,10 @@ import { stylists } from "@/data/stylists";
 import { buildMatchingPrompt } from "@/lib/system-prompt";
 import { preFilterStylists, type FilterConstraints } from "@/lib/pre-filter";
 
+function stripCodeFences(text: string): string {
+  return text.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
+}
+
 const EXTRACTION_SYSTEM_PROMPT = `You are a constraint extraction engine. Given a customer's natural-language request about finding a hair salon/stylist in Tokyo, extract structured parameters.
 
 Return ONLY a JSON object:
@@ -103,7 +107,7 @@ export async function POST(req: NextRequest) {
           ? extractionResponse.content[0].text
           : "{}";
 
-      extractedParams = JSON.parse(extractionText);
+      extractedParams = JSON.parse(stripCodeFences(extractionText));
       const hardConstraints = (extractedParams.hard_constraints || {}) as FilterConstraints;
       filterConstraints = hardConstraints;
 
@@ -169,7 +173,7 @@ export async function POST(req: NextRequest) {
           ? reasoningResponse.content[0].text
           : "{}";
 
-      reasoningResult = JSON.parse(reasoningText);
+      reasoningResult = JSON.parse(stripCodeFences(reasoningText));
 
       steps.push({
         id: "reasoning",
