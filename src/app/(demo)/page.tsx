@@ -51,7 +51,30 @@ export default function CustomerExperiencePage() {
       <div className="flex-1 min-h-0">
         {activeTab === "discovery" && <DiscoveryChannels />}
 
-        {activeTab === "chat" && <ChatPanel />}
+        {activeTab === "chat" && (
+          <div
+            className="h-full relative overflow-hidden"
+            style={{
+              backgroundImage:
+                "radial-gradient(ellipse at top left, color-mix(in oklab, var(--sozo-blue) 12%, transparent), transparent 55%), radial-gradient(ellipse at bottom right, color-mix(in oklab, var(--sozo-gold) 14%, transparent), transparent 55%), linear-gradient(to bottom, var(--sozo-cream), color-mix(in oklab, var(--sozo-warm-gray) 14%, var(--background)))",
+            }}
+          >
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-40 pointer-events-none"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, color-mix(in oklab, var(--sozo-charcoal) 30%, transparent) 1px, transparent 1px)",
+                backgroundSize: "22px 22px",
+              }}
+            />
+            <div className="relative h-full p-3 sm:p-5 md:p-6 lg:p-8">
+              <div className="mx-auto h-full w-full max-w-6xl">
+                <ChatPanel />
+              </div>
+            </div>
+          </div>
+        )}
 
         {activeTab === "voice" && <VoiceTab />}
 

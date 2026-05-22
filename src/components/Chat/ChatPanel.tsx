@@ -254,6 +254,12 @@ export function ChatPanel() {
         }
       }
     }
+
+    // No stylist blocks found — exit "exploring" state so the pane
+    // doesn't stay stuck on "Finding your match..." indefinitely.
+    setContextPane((prev) =>
+      prev.mode === "exploring" ? { mode: "intro" } : prev
+    );
   };
 
   const sendMessage = async (content: string) => {
@@ -308,16 +314,19 @@ export function ChatPanel() {
 
         for (const line of lines) {
           if (!line.startsWith("data: ")) continue;
+          let event: { type: string; text?: string; content?: string; message?: string };
           try {
-            const event = JSON.parse(line.slice(6));
-            if (event.type === "delta") {
-              fullContent += event.text;
-              setStreamingText(fullContent);
-            } else if (event.type === "done") {
-              fullContent = event.content;
-            }
+            event = JSON.parse(line.slice(6));
           } catch {
-            // skip malformed events
+            continue; // skip malformed JSON
+          }
+          if (event.type === "delta") {
+            fullContent += event.text;
+            setStreamingText(fullContent);
+          } else if (event.type === "done") {
+            fullContent = event.content ?? fullContent;
+          } else if (event.type === "error") {
+            throw new Error(event.message || "Stream failed");
           }
         }
       }
@@ -382,7 +391,7 @@ export function ChatPanel() {
 
   if (bookingStylist) {
     return (
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full rounded-2xl md:rounded-3xl border border-black/10 bg-card shadow-[0_30px_80px_-20px_rgba(15,23,42,0.35),0_8px_24px_-8px_rgba(15,23,42,0.18)] overflow-hidden ring-1 ring-white/40">
         <div className="border-b bg-background px-4 py-3">
           <Button
             variant="ghost"
@@ -450,24 +459,63 @@ export function ChatPanel() {
   };
 
   return (
-    <div className="flex flex-col h-full">
-      {/* Top bar */}
-      <div className="border-b bg-background/95 backdrop-blur px-4 py-2 flex items-center justify-between gap-2 shrink-0">
-        <div className="flex items-center gap-2">
-          <Badge variant="outline" className="gap-1 h-5 text-[10px]">
-            <Shield className="h-2.5 w-2.5 text-sozo-blue" />
-            SOZO Inside
-          </Badge>
+    <div className="flex flex-col h-full rounded-2xl md:rounded-3xl border border-black/10 bg-card shadow-[0_30px_80px_-20px_rgba(15,23,42,0.35),0_8px_24px_-8px_rgba(15,23,42,0.18)] overflow-hidden ring-1 ring-white/40">
+      {/* Branded app header */}
+      <div className="relative shrink-0 bg-sozo-charcoal text-white">
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at top left, color-mix(in oklab, var(--sozo-blue) 55%, transparent), transparent 60%), radial-gradient(circle at bottom right, color-mix(in oklab, var(--sozo-gold) 30%, transparent), transparent 55%)",
+          }}
+        />
+        <div className="relative flex items-center justify-between gap-3 px-4 py-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="relative shrink-0">
+              <div className="w-10 h-10 rounded-2xl bg-white/10 ring-1 ring-white/25 backdrop-blur flex items-center justify-center">
+                <Sparkles className="h-4 w-4 text-white" />
+              </div>
+              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 ring-2 ring-sozo-charcoal" />
+            </div>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <h2 className="font-serif text-base md:text-lg leading-none truncate">
+                  SOZO Concierge
+                </h2>
+                <Badge
+                  variant="outline"
+                  className="gap-1 h-4 text-[9px] uppercase tracking-wider border-white/30 text-white/90 bg-white/10"
+                >
+                  AI
+                </Badge>
+              </div>
+              <div className="mt-1 flex items-center gap-1.5 text-[11px] text-white/70">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Online · English-speaking stylist concierge</span>
+              </div>
+            </div>
+          </div>
+          <div className="hidden sm:flex items-center">
+            <Badge
+              variant="outline"
+              className="gap-1 h-6 text-[10px] border-white/25 text-white/90 bg-white/10 backdrop-blur"
+            >
+              <Shield className="h-2.5 w-2.5" />
+              SOZO Inside
+            </Badge>
+          </div>
         </div>
+        <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </div>
 
       {/* Main content area -- split on desktop */}
-      <div className="flex-1 flex min-h-0">
+      <div className="flex-1 flex min-h-0 bg-card">
         {/* Chat column */}
-        <div className="flex-1 flex flex-col min-w-0">
+        <div className="flex-1 flex flex-col min-w-0 bg-gradient-to-b from-sozo-cream/40 via-background to-background">
+          {/* Scrollable messages */}
           <div className="flex-1 overflow-y-auto" ref={scrollRef}>
-            {/* Messages */}
-            <div className="max-w-2xl mx-auto p-4 space-y-5 pb-20">
+            <div className="max-w-2xl mx-auto p-4 space-y-5">
               <AnimatePresence>
                 {messageAndInlineItems()}
               </AnimatePresence>
@@ -489,43 +537,43 @@ export function ChatPanel() {
 
               {isLoading && !streamingText && <TypingIndicator />}
             </div>
+          </div>
 
-            {/* Input -- sticky to bottom of scroll viewport */}
-            <div className="sticky bottom-0 border-t bg-background p-3 z-10">
-              <div className="max-w-2xl mx-auto">
-                <div className="flex items-end gap-2">
-                  <div className="flex-1 relative">
-                    <textarea
-                      ref={inputRef}
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      placeholder="Tell me about your ideal salon visit..."
-                      rows={1}
-                      className="w-full resize-none rounded-xl border bg-muted/50 px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-sozo-blue/20 focus:border-sozo-blue/40 min-h-[42px] max-h-[120px]"
-                      style={
-                        { fieldSizing: "content" } as React.CSSProperties
-                      }
-                    />
-                  </div>
-                  <Button
-                    onClick={() => sendMessage(input)}
-                    disabled={!input.trim() || isLoading}
-                    size="icon"
-                    className="h-[42px] w-[42px] rounded-xl bg-sozo-blue hover:bg-sozo-blue-hover text-white shrink-0"
-                  >
-                    {isLoading ? (
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    ) : (
-                      <Send className="h-4 w-4" />
-                    )}
-                  </Button>
+          {/* Input -- pinned to bottom of card */}
+          <div className="shrink-0 border-t bg-background/95 backdrop-blur p-3">
+            <div className="max-w-2xl mx-auto">
+              <div className="flex items-end gap-2">
+                <div className="flex-1 relative">
+                  <textarea
+                    ref={inputRef}
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    placeholder="Tell me about your ideal salon visit..."
+                    rows={1}
+                    className="w-full resize-none rounded-xl border bg-muted/50 px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-sozo-blue/20 focus:border-sozo-blue/40 min-h-[42px] max-h-[120px]"
+                    style={
+                      { fieldSizing: "content" } as React.CSSProperties
+                    }
+                  />
                 </div>
-                <p className="text-[10px] text-muted-foreground text-center mt-2">
-                  SOZO Concierge · All recommended salons are SOZO Alliance
-                  certified
-                </p>
+                <Button
+                  onClick={() => sendMessage(input)}
+                  disabled={!input.trim() || isLoading}
+                  size="icon"
+                  className="h-[42px] w-[42px] rounded-xl bg-sozo-blue hover:bg-sozo-blue-hover text-white shrink-0"
+                >
+                  {isLoading ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="h-4 w-4" />
+                  )}
+                </Button>
               </div>
+              <p className="text-[10px] text-muted-foreground text-center mt-2">
+                SOZO Concierge · All recommended salons are SOZO Alliance
+                certified
+              </p>
             </div>
           </div>
         </div>
