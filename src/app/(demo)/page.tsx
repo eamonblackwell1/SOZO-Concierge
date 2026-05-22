@@ -11,14 +11,14 @@ import { VoiceTab } from "@/components/VoiceTab";
 type SubTab = "discovery" | "chat" | "voice" | "email";
 
 const tabs: { id: SubTab; label: string; icon: typeof MessageSquare }[] = [
-  { id: "discovery", label: "Discovery", icon: Globe },
   { id: "chat", label: "Chat", icon: MessageSquare },
   { id: "voice", label: "Voice", icon: Mic },
   { id: "email", label: "Email Preview", icon: Mail },
+  { id: "discovery", label: "Discovery", icon: Globe },
 ];
 
 export default function CustomerExperiencePage() {
-  const [activeTab, setActiveTab] = useState<SubTab>("discovery");
+  const [activeTab, setActiveTab] = useState<SubTab>("chat");
 
   return (
     <div className="flex flex-col h-[calc(100vh-3.5rem)]">

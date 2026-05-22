@@ -48,7 +48,7 @@ const phases: Phase[] = [
     metric: "Target: 200 bookings / month",
     deliverables: [
       { label: "SOZO Concierge MVP — text chat + voice agent", icon: MessageSquare, done: true },
-      { label: "5 partner salons onboarded in central Tokyo", icon: Building2, done: true },
+      { label: "11 partner salons onboarded in central Tokyo", icon: Building2, done: true },
       { label: "Airbnb host distribution channel (QR + welcome guide)", icon: MapPin, done: false },
       { label: "Salon dashboard with real-time booking data", icon: Laptop, done: false },
       { label: "SOZO Master badge program launched", icon: Heart, done: false },
