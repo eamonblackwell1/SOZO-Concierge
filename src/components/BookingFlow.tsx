@@ -144,8 +144,12 @@ function ConfirmationScreen({
 
       <div className="bg-muted rounded-xl p-4 text-left space-y-3">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-sozo-cream flex items-center justify-center text-sm font-serif">
-            {stylist.name.charAt(0)}
+          <div className="w-10 h-10 rounded-full bg-sozo-cream flex items-center justify-center text-sm font-serif overflow-hidden">
+            {stylist.photo_url ? (
+              <img src={stylist.photo_url} alt={stylist.name} className="w-full h-full object-cover" />
+            ) : (
+              stylist.name.charAt(0)
+            )}
           </div>
           <div>
             <div className="flex items-center gap-1.5">
@@ -269,8 +273,12 @@ export function BookingFlow({
           >
             <div className="bg-muted rounded-xl p-4 space-y-2">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-sozo-cream flex items-center justify-center text-xs font-serif">
-                  {stylist.name.charAt(0)}
+                <div className="w-8 h-8 rounded-full bg-sozo-cream flex items-center justify-center text-xs font-serif overflow-hidden">
+                  {stylist.photo_url ? (
+                    <img src={stylist.photo_url} alt={stylist.name} className="w-full h-full object-cover" />
+                  ) : (
+                    stylist.name.charAt(0)
+                  )}
                 </div>
                 <div>
                   <p className="font-medium text-sm">{stylist.name}</p>

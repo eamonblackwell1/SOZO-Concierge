@@ -109,7 +109,6 @@ const GREETING_B = `[
 
 const GREETING_C = `[
   { "type": "text", "content": "Hi! I'm SOZO Concierge. Tell me what you're hoping for — even something vague like 'I just want my hair to look good for dinner Saturday' is enough to start." },
-  { "type": "image-row", "image_ids": ["hood-harajuku", "hood-aoyama", "hood-shibuya", "hood-daikanyama"] },
   { "type": "text", "content": "Or if you'd prefer, I can ask you a few quick questions instead." },
   { "type": "suggestions", "chips": ["I want a fresh cut before Saturday", "Show me color inspiration", "Ask me some quick questions", "What's the best salon in Harajuku?"] }
 ]`;

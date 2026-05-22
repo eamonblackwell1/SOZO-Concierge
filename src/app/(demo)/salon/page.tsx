@@ -264,8 +264,12 @@ export default function SalonDashboardPage() {
                       <Card>
                         <CardContent className="px-5 py-4 space-y-3">
                           <div className="flex items-start gap-3">
-                            <div className="w-10 h-10 rounded-full bg-sozo-cream flex items-center justify-center text-sm font-serif shrink-0">
-                              {stylist.name.charAt(0)}
+                            <div className="w-10 h-10 rounded-full bg-sozo-cream flex items-center justify-center text-sm font-serif shrink-0 overflow-hidden">
+                              {stylist.photo_url ? (
+                                <img src={stylist.photo_url} alt={stylist.name} className="w-full h-full object-cover" />
+                              ) : (
+                                stylist.name.charAt(0)
+                              )}
                             </div>
                             <div className="min-w-0 flex-1">
                               <div className="flex items-center gap-1.5">

@@ -72,8 +72,12 @@ export function AirbnbEmailMockup({ stylist: propStylist }: { stylist?: Stylist 
         {/* Stylist card */}
         <div className="px-6 py-5">
           <div className="flex items-center gap-4 pb-4 border-b">
-            <div className="w-14 h-14 rounded-full bg-sozo-cream flex items-center justify-center text-lg font-serif text-sozo-charcoal shrink-0">
-              {stylist.name.charAt(0)}
+            <div className="w-14 h-14 rounded-full bg-sozo-cream flex items-center justify-center text-lg font-serif text-sozo-charcoal shrink-0 overflow-hidden">
+              {stylist.photo_url ? (
+                <img src={stylist.photo_url} alt={stylist.name} className="w-full h-full object-cover" />
+              ) : (
+                stylist.name.charAt(0)
+              )}
             </div>
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">

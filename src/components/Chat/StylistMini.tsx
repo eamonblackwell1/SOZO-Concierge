@@ -25,8 +25,12 @@ export function StylistMiniCard({
           : "ring-foreground/10 hover:ring-foreground/20"
       )}
     >
-      <div className="w-12 h-12 rounded-lg bg-sozo-cream shrink-0 flex items-center justify-center text-lg font-serif text-muted-foreground">
-        {stylist.name.charAt(0)}
+      <div className="w-12 h-12 rounded-lg bg-sozo-cream shrink-0 flex items-center justify-center text-lg font-serif text-muted-foreground overflow-hidden">
+        {stylist.photo_url ? (
+          <img src={stylist.photo_url} alt={stylist.name} className="w-full h-full object-cover" />
+        ) : (
+          stylist.name.charAt(0)
+        )}
       </div>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1.5">

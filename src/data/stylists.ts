@@ -229,7 +229,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 95,
     international_guest_count_6mo: 42,
     google_review_avg_english_only: 4.9,
-    photo_url: "/stylists/mori-takeshi.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=mori-takeshi",
     portfolio_urls: ["/portfolio/mori-takeshi-1.jpg","/portfolio/mori-takeshi-2.jpg","/portfolio/mori-takeshi-3.jpg","/portfolio/mori-takeshi-4.jpg","/portfolio/mori-takeshi-5.jpg"],
   },
 
@@ -363,7 +363,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 95,
     international_guest_count_6mo: 38,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/yuki-tanaka.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=yuki-tanaka",
     portfolio_urls: ["/portfolio/yuki-tanaka-1.jpg","/portfolio/yuki-tanaka-2.jpg","/portfolio/yuki-tanaka-3.jpg","/portfolio/yuki-tanaka-4.jpg"],
   },
 
@@ -499,7 +499,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 95,
     international_guest_count_6mo: 30,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/hana-sato.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=hana-sato",
     portfolio_urls: ["/portfolio/hana-sato-1.jpg","/portfolio/hana-sato-2.jpg","/portfolio/hana-sato-3.jpg","/portfolio/hana-sato-4.jpg"],
   },
 
@@ -635,7 +635,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 95,
     international_guest_count_6mo: 35,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/ken-watanabe.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=ken-watanabe",
     portfolio_urls: ["/portfolio/ken-watanabe-1.jpg","/portfolio/ken-watanabe-2.jpg","/portfolio/ken-watanabe-3.jpg"],
   },
 
@@ -771,7 +771,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 95,
     international_guest_count_6mo: 40,
     google_review_avg_english_only: 4.9,
-    photo_url: "/stylists/emi-nakamura.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=emi-nakamura",
     portfolio_urls: ["/portfolio/emi-nakamura-1.jpg","/portfolio/emi-nakamura-2.jpg","/portfolio/emi-nakamura-3.jpg","/portfolio/emi-nakamura-4.jpg","/portfolio/emi-nakamura-5.jpg"],
   },
 
@@ -915,7 +915,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 95,
     international_guest_count_6mo: 22,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/aoi-yamamoto.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=aoi-yamamoto",
     portfolio_urls: ["/portfolio/aoi-yamamoto-1.jpg","/portfolio/aoi-yamamoto-2.jpg","/portfolio/aoi-yamamoto-3.jpg","/portfolio/aoi-yamamoto-4.jpg"],
   },
 
@@ -1049,7 +1049,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 95,
     international_guest_count_6mo: 18,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/ryo-fujita.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=ryo-fujita",
     portfolio_urls: ["/portfolio/ryo-fujita-1.jpg","/portfolio/ryo-fujita-2.jpg","/portfolio/ryo-fujita-3.jpg"],
   },
 
@@ -1184,7 +1184,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 35,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/daiki-ito.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=daiki-ito",
     portfolio_urls: ["/portfolio/daiki-ito-1.jpg","/portfolio/daiki-ito-2.jpg","/portfolio/daiki-ito-3.jpg","/portfolio/daiki-ito-4.jpg"],
   },
 
@@ -1328,7 +1328,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 25,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/sakura-hayashi.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=sakura-hayashi",
     portfolio_urls: ["/portfolio/sakura-hayashi-1.jpg","/portfolio/sakura-hayashi-2.jpg","/portfolio/sakura-hayashi-3.jpg","/portfolio/sakura-hayashi-4.jpg"],
   },
 
@@ -1464,7 +1464,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 28,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/taro-kobayashi.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=taro-kobayashi",
     portfolio_urls: ["/portfolio/taro-kobayashi-1.jpg","/portfolio/taro-kobayashi-2.jpg","/portfolio/taro-kobayashi-3.jpg"],
   },
 
@@ -1598,7 +1598,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 32,
     google_review_avg_english_only: 4.9,
-    photo_url: "/stylists/mika-shimizu.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=mika-shimizu",
     portfolio_urls: ["/portfolio/mika-shimizu-1.jpg","/portfolio/mika-shimizu-2.jpg","/portfolio/mika-shimizu-3.jpg","/portfolio/mika-shimizu-4.jpg"],
   },
 
@@ -1733,7 +1733,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 20,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/jun-ogawa.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=jun-ogawa",
     portfolio_urls: ["/portfolio/jun-ogawa-1.jpg","/portfolio/jun-ogawa-2.jpg","/portfolio/jun-ogawa-3.jpg"],
   },
 
@@ -1869,7 +1869,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 23,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/nana-inoue.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=nana-inoue",
     portfolio_urls: ["/portfolio/nana-inoue-1.jpg","/portfolio/nana-inoue-2.jpg","/portfolio/nana-inoue-3.jpg","/portfolio/nana-inoue-4.jpg"],
   },
 
@@ -2004,7 +2004,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 92,
     international_guest_count_6mo: 38,
     google_review_avg_english_only: 4.9,
-    photo_url: "/stylists/kenji-murakami.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=kenji-murakami",
     portfolio_urls: ["/portfolio/kenji-murakami-1.jpg","/portfolio/kenji-murakami-2.jpg","/portfolio/kenji-murakami-3.jpg","/portfolio/kenji-murakami-4.jpg","/portfolio/kenji-murakami-5.jpg"],
   },
 
@@ -2134,7 +2134,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 92,
     international_guest_count_6mo: 33,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/yumi-sasaki.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=yumi-sasaki",
     portfolio_urls: ["/portfolio/yumi-sasaki-1.jpg","/portfolio/yumi-sasaki-2.jpg","/portfolio/yumi-sasaki-3.jpg","/portfolio/yumi-sasaki-4.jpg"],
   },
 
@@ -2268,7 +2268,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 92,
     international_guest_count_6mo: 28,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/haruto-kato.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=haruto-kato",
     portfolio_urls: ["/portfolio/haruto-kato-1.jpg","/portfolio/haruto-kato-2.jpg","/portfolio/haruto-kato-3.jpg","/portfolio/haruto-kato-4.jpg"],
   },
 
@@ -2400,7 +2400,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 92,
     international_guest_count_6mo: 25,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/rei-takahashi.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=rei-takahashi",
     portfolio_urls: ["/portfolio/rei-takahashi-1.jpg","/portfolio/rei-takahashi-2.jpg","/portfolio/rei-takahashi-3.jpg","/portfolio/rei-takahashi-4.jpg","/portfolio/rei-takahashi-5.jpg"],
   },
 
@@ -2532,7 +2532,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 92,
     international_guest_count_6mo: 22,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/saki-endo.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=saki-endo",
     portfolio_urls: ["/portfolio/saki-endo-1.jpg","/portfolio/saki-endo-2.jpg","/portfolio/saki-endo-3.jpg"],
   },
 
@@ -2677,7 +2677,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 92,
     international_guest_count_6mo: 18,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/akira-nishida.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=akira-nishida",
     portfolio_urls: ["/portfolio/akira-nishida-1.jpg","/portfolio/akira-nishida-2.jpg","/portfolio/akira-nishida-3.jpg"],
   },
 
@@ -2814,7 +2814,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 36,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/shun-morita.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=shun-morita",
     portfolio_urls: ["/portfolio/shun-morita-1.jpg","/portfolio/shun-morita-2.jpg","/portfolio/shun-morita-3.jpg","/portfolio/shun-morita-4.jpg","/portfolio/shun-morita-5.jpg"],
   },
 
@@ -2949,7 +2949,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 20,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/mayu-okada.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=mayu-okada",
     portfolio_urls: ["/portfolio/mayu-okada-1.jpg","/portfolio/mayu-okada-2.jpg","/portfolio/mayu-okada-3.jpg","/portfolio/mayu-okada-4.jpg"],
   },
 
@@ -3094,7 +3094,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 22,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/takumi-arai.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=takumi-arai",
     portfolio_urls: ["/portfolio/takumi-arai-1.jpg","/portfolio/takumi-arai-2.jpg","/portfolio/takumi-arai-3.jpg"],
   },
 
@@ -3229,7 +3229,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 26,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/rina-matsumoto.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=rina-matsumoto",
     portfolio_urls: ["/portfolio/rina-matsumoto-1.jpg","/portfolio/rina-matsumoto-2.jpg","/portfolio/rina-matsumoto-3.jpg","/portfolio/rina-matsumoto-4.jpg"],
   },
 
@@ -3363,7 +3363,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 18,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/sota-kimura.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=sota-kimura",
     portfolio_urls: ["/portfolio/sota-kimura-1.jpg","/portfolio/sota-kimura-2.jpg","/portfolio/sota-kimura-3.jpg"],
   },
 
@@ -3497,7 +3497,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 24,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/hinata-yoshida.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=hinata-yoshida",
     portfolio_urls: ["/portfolio/hinata-yoshida-1.jpg","/portfolio/hinata-yoshida-2.jpg","/portfolio/hinata-yoshida-3.jpg"],
   },
 
@@ -3631,7 +3631,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 85,
     international_guest_count_6mo: 30,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/kai-hashimoto.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=kai-hashimoto",
     portfolio_urls: ["/portfolio/kai-hashimoto-1.jpg","/portfolio/kai-hashimoto-2.jpg","/portfolio/kai-hashimoto-3.jpg","/portfolio/kai-hashimoto-4.jpg"],
   },
 
@@ -3765,7 +3765,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 85,
     international_guest_count_6mo: 15,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/mio-suzuki.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=mio-suzuki",
     portfolio_urls: ["/portfolio/mio-suzuki-1.jpg","/portfolio/mio-suzuki-2.jpg","/portfolio/mio-suzuki-3.jpg"],
   },
 
@@ -3900,7 +3900,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 85,
     international_guest_count_6mo: 19,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/yuta-taniguchi.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=yuta-taniguchi",
     portfolio_urls: ["/portfolio/yuta-taniguchi-1.jpg","/portfolio/yuta-taniguchi-2.jpg","/portfolio/yuta-taniguchi-3.jpg"],
   },
 
@@ -4035,7 +4035,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 85,
     international_guest_count_6mo: 12,
     google_review_avg_english_only: 4.4,
-    photo_url: "/stylists/nanami-fukuda.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=nanami-fukuda",
     portfolio_urls: ["/portfolio/nanami-fukuda-1.jpg","/portfolio/nanami-fukuda-2.jpg","/portfolio/nanami-fukuda-3.jpg"],
   },
 
@@ -4168,7 +4168,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 85,
     international_guest_count_6mo: 22,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/leo-saito.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=leo-saito",
     portfolio_urls: ["/portfolio/leo-saito-1.jpg","/portfolio/leo-saito-2.jpg","/portfolio/leo-saito-3.jpg","/portfolio/leo-saito-4.jpg"],
   },
 
@@ -4302,7 +4302,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 40,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/masahiro-noguchi.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=masahiro-noguchi",
     portfolio_urls: ["/portfolio/masahiro-noguchi-1.jpg","/portfolio/masahiro-noguchi-2.jpg","/portfolio/masahiro-noguchi-3.jpg","/portfolio/masahiro-noguchi-4.jpg"],
   },
 
@@ -4437,7 +4437,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 34,
     google_review_avg_english_only: 4.9,
-    photo_url: "/stylists/chihiro-watanabe-k.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=chihiro-watanabe-k",
     portfolio_urls: ["/portfolio/chihiro-watanabe-k-1.jpg","/portfolio/chihiro-watanabe-k-2.jpg","/portfolio/chihiro-watanabe-k-3.jpg","/portfolio/chihiro-watanabe-k-4.jpg","/portfolio/chihiro-watanabe-k-5.jpg"],
   },
 
@@ -4572,7 +4572,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 25,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/ryosuke-yamada.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=ryosuke-yamada",
     portfolio_urls: ["/portfolio/ryosuke-yamada-1.jpg","/portfolio/ryosuke-yamada-2.jpg","/portfolio/ryosuke-yamada-3.jpg"],
   },
 
@@ -4717,7 +4717,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 28,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/ayaka-ono.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=ayaka-ono",
     portfolio_urls: ["/portfolio/ayaka-ono-1.jpg","/portfolio/ayaka-ono-2.jpg","/portfolio/ayaka-ono-3.jpg","/portfolio/ayaka-ono-4.jpg"],
   },
 
@@ -4851,7 +4851,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 20,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/hiroshi-tanabe.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=hiroshi-tanabe",
     portfolio_urls: ["/portfolio/hiroshi-tanabe-1.jpg","/portfolio/hiroshi-tanabe-2.jpg","/portfolio/hiroshi-tanabe-3.jpg"],
   },
 
@@ -4985,7 +4985,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 90,
     international_guest_count_6mo: 18,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/mei-honda.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=mei-honda",
     portfolio_urls: ["/portfolio/mei-honda-1.jpg","/portfolio/mei-honda-2.jpg","/portfolio/mei-honda-3.jpg","/portfolio/mei-honda-4.jpg"],
   },
 
@@ -5132,7 +5132,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 96,
     international_guest_count_6mo: 45,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/riku-ishikawa.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=riku-ishikawa",
     portfolio_urls: ["/portfolio/riku-ishikawa-1.jpg","/portfolio/riku-ishikawa-2.jpg","/portfolio/riku-ishikawa-3.jpg","/portfolio/riku-ishikawa-4.jpg","/portfolio/riku-ishikawa-5.jpg"],
   },
 
@@ -5263,7 +5263,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 96,
     international_guest_count_6mo: 35,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/tomoko-ueda.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=tomoko-ueda",
     portfolio_urls: ["/portfolio/tomoko-ueda-1.jpg","/portfolio/tomoko-ueda-2.jpg","/portfolio/tomoko-ueda-3.jpg"],
   },
 
@@ -5396,7 +5396,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 96,
     international_guest_count_6mo: 28,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/naoto-maeda.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=naoto-maeda",
     portfolio_urls: ["/portfolio/naoto-maeda-1.jpg","/portfolio/naoto-maeda-2.jpg","/portfolio/naoto-maeda-3.jpg","/portfolio/naoto-maeda-4.jpg"],
   },
 
@@ -5527,7 +5527,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 96,
     international_guest_count_6mo: 30,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/kanako-sugimoto.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=kanako-sugimoto",
     portfolio_urls: ["/portfolio/kanako-sugimoto-1.jpg","/portfolio/kanako-sugimoto-2.jpg","/portfolio/kanako-sugimoto-3.jpg","/portfolio/kanako-sugimoto-4.jpg"],
   },
 
@@ -5662,7 +5662,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 96,
     international_guest_count_6mo: 32,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/daisuke-wada.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=daisuke-wada",
     portfolio_urls: ["/portfolio/daisuke-wada-1.jpg","/portfolio/daisuke-wada-2.jpg","/portfolio/daisuke-wada-3.jpg"],
   },
 
@@ -5798,7 +5798,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 96,
     international_guest_count_6mo: 24,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/yua-hirata.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=yua-hirata",
     portfolio_urls: ["/portfolio/yua-hirata-1.jpg","/portfolio/yua-hirata-2.jpg","/portfolio/yua-hirata-3.jpg","/portfolio/yua-hirata-4.jpg"],
   },
 
@@ -5934,7 +5934,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 78,
     international_guest_count_6mo: 16,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/satoshi-otsuka.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=satoshi-otsuka",
     portfolio_urls: ["/portfolio/satoshi-otsuka-1.jpg","/portfolio/satoshi-otsuka-2.jpg","/portfolio/satoshi-otsuka-3.jpg","/portfolio/satoshi-otsuka-4.jpg"],
   },
 
@@ -6069,7 +6069,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 78,
     international_guest_count_6mo: 12,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/mizuki-kawaguchi.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=mizuki-kawaguchi",
     portfolio_urls: ["/portfolio/mizuki-kawaguchi-1.jpg","/portfolio/mizuki-kawaguchi-2.jpg","/portfolio/mizuki-kawaguchi-3.jpg"],
   },
 
@@ -6203,7 +6203,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 78,
     international_guest_count_6mo: 10,
     google_review_avg_english_only: 4.4,
-    photo_url: "/stylists/kosei-nakata.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=kosei-nakata",
     portfolio_urls: ["/portfolio/kosei-nakata-1.jpg","/portfolio/kosei-nakata-2.jpg","/portfolio/kosei-nakata-3.jpg"],
   },
 
@@ -6338,7 +6338,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 78,
     international_guest_count_6mo: 14,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/asami-fuji.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=asami-fuji",
     portfolio_urls: ["/portfolio/asami-fuji-1.jpg","/portfolio/asami-fuji-2.jpg","/portfolio/asami-fuji-3.jpg"],
   },
 
@@ -6473,7 +6473,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 78,
     international_guest_count_6mo: 18,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/rena-okamoto.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=rena-okamoto",
     portfolio_urls: ["/portfolio/rena-okamoto-1.jpg","/portfolio/rena-okamoto-2.jpg","/portfolio/rena-okamoto-3.jpg","/portfolio/rena-okamoto-4.jpg"],
   },
 
@@ -6608,7 +6608,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 32,
     google_review_avg_english_only: 4.9,
-    photo_url: "/stylists/minami-kurosawa.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=minami-kurosawa",
     portfolio_urls: ["/portfolio/minami-kurosawa-1.jpg","/portfolio/minami-kurosawa-2.jpg","/portfolio/minami-kurosawa-3.jpg","/portfolio/minami-kurosawa-4.jpg","/portfolio/minami-kurosawa-5.jpg"],
   },
 
@@ -6753,7 +6753,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 26,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/yuto-hasegawa.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=yuto-hasegawa",
     portfolio_urls: ["/portfolio/yuto-hasegawa-1.jpg","/portfolio/yuto-hasegawa-2.jpg","/portfolio/yuto-hasegawa-3.jpg","/portfolio/yuto-hasegawa-4.jpg"],
   },
 
@@ -6887,7 +6887,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 20,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/kaede-miyamoto.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=kaede-miyamoto",
     portfolio_urls: ["/portfolio/kaede-miyamoto-1.jpg","/portfolio/kaede-miyamoto-2.jpg","/portfolio/kaede-miyamoto-3.jpg"],
   },
 
@@ -7018,7 +7018,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 14,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/tatsuya-kondo.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=tatsuya-kondo",
     portfolio_urls: ["/portfolio/tatsuya-kondo-1.jpg","/portfolio/tatsuya-kondo-2.jpg","/portfolio/tatsuya-kondo-3.jpg"],
   },
 
@@ -7162,7 +7162,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 88,
     international_guest_count_6mo: 18,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/aya-nishimura.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=aya-nishimura",
     portfolio_urls: ["/portfolio/aya-nishimura-1.jpg","/portfolio/aya-nishimura-2.jpg","/portfolio/aya-nishimura-3.jpg","/portfolio/aya-nishimura-4.jpg"],
   },
 
@@ -7297,7 +7297,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 82,
     international_guest_count_6mo: 38,
     google_review_avg_english_only: 4.8,
-    photo_url: "/stylists/kengo-sakamoto.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=kengo-sakamoto",
     portfolio_urls: ["/portfolio/kengo-sakamoto-1.jpg","/portfolio/kengo-sakamoto-2.jpg","/portfolio/kengo-sakamoto-3.jpg","/portfolio/kengo-sakamoto-4.jpg","/portfolio/kengo-sakamoto-5.jpg"],
   },
 
@@ -7430,7 +7430,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 82,
     international_guest_count_6mo: 24,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/shiori-harada.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=shiori-harada",
     portfolio_urls: ["/portfolio/shiori-harada-1.jpg","/portfolio/shiori-harada-2.jpg","/portfolio/shiori-harada-3.jpg","/portfolio/shiori-harada-4.jpg"],
   },
 
@@ -7565,7 +7565,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 82,
     international_guest_count_6mo: 20,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/ryoma-ueno.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=ryoma-ueno",
     portfolio_urls: ["/portfolio/ryoma-ueno-1.jpg","/portfolio/ryoma-ueno-2.jpg","/portfolio/ryoma-ueno-3.jpg"],
   },
 
@@ -7700,7 +7700,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 82,
     international_guest_count_6mo: 22,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/misaki-goto.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=misaki-goto",
     portfolio_urls: ["/portfolio/misaki-goto-1.jpg","/portfolio/misaki-goto-2.jpg","/portfolio/misaki-goto-3.jpg"],
   },
 
@@ -7835,7 +7835,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 82,
     international_guest_count_6mo: 20,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/takashi-nakai.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=takashi-nakai",
     portfolio_urls: ["/portfolio/takashi-nakai-1.jpg","/portfolio/takashi-nakai-2.jpg","/portfolio/takashi-nakai-3.jpg"],
   },
 
@@ -7971,7 +7971,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 82,
     international_guest_count_6mo: 15,
     google_review_avg_english_only: 4.5,
-    photo_url: "/stylists/yuki-mori.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=yuki-mori",
     portfolio_urls: ["/portfolio/yuki-mori-1.jpg","/portfolio/yuki-mori-2.jpg","/portfolio/yuki-mori-3.jpg","/portfolio/yuki-mori-4.jpg"],
   },
 
@@ -8105,7 +8105,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 75,
     international_guest_count_6mo: 18,
     google_review_avg_english_only: 4.7,
-    photo_url: "/stylists/sora-kitamura.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=sora-kitamura",
     portfolio_urls: ["/portfolio/sora-kitamura-1.jpg","/portfolio/sora-kitamura-2.jpg","/portfolio/sora-kitamura-3.jpg","/portfolio/sora-kitamura-4.jpg"],
   },
 
@@ -8238,7 +8238,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 75,
     international_guest_count_6mo: 14,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/mana-takeda.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=mana-takeda",
     portfolio_urls: ["/portfolio/mana-takeda-1.jpg","/portfolio/mana-takeda-2.jpg","/portfolio/mana-takeda-3.jpg","/portfolio/mana-takeda-4.jpg"],
   },
 
@@ -8374,7 +8374,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 75,
     international_guest_count_6mo: 10,
     google_review_avg_english_only: 4.4,
-    photo_url: "/stylists/hayato-matsuda.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=hayato-matsuda",
     portfolio_urls: ["/portfolio/hayato-matsuda-1.jpg","/portfolio/hayato-matsuda-2.jpg","/portfolio/hayato-matsuda-3.jpg"],
   },
 
@@ -8506,7 +8506,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 75,
     international_guest_count_6mo: 12,
     google_review_avg_english_only: 4.6,
-    photo_url: "/stylists/nozomi-aoki.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=nozomi-aoki",
     portfolio_urls: ["/portfolio/nozomi-aoki-1.jpg","/portfolio/nozomi-aoki-2.jpg","/portfolio/nozomi-aoki-3.jpg"],
   },
 
@@ -8640,7 +8640,7 @@ export const stylists: Stylist[] = [
     salon_english_score: 75,
     international_guest_count_6mo: 8,
     google_review_avg_english_only: 4.4,
-    photo_url: "/stylists/jin-okuda.jpg",
+    photo_url: "https://i.pravatar.cc/150?u=jin-okuda",
     portfolio_urls: ["/portfolio/jin-okuda-1.jpg","/portfolio/jin-okuda-2.jpg","/portfolio/jin-okuda-3.jpg"],
   }
 ];

@@ -164,8 +164,12 @@ function PostCallConfirmation({ stylist }: { stylist: Stylist }) {
       <div className="rounded-xl ring-1 ring-foreground/10 bg-card overflow-hidden">
         <div className="p-5 space-y-4">
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-sozo-cream flex items-center justify-center text-xl font-serif shrink-0">
-              {stylist.name.charAt(0)}
+            <div className="w-14 h-14 rounded-full bg-sozo-cream flex items-center justify-center text-xl font-serif shrink-0 overflow-hidden">
+              {stylist.photo_url ? (
+                <img src={stylist.photo_url} alt={stylist.name} className="w-full h-full object-cover" />
+              ) : (
+                stylist.name.charAt(0)
+              )}
             </div>
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">

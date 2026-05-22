@@ -61,7 +61,7 @@ function getRandomFlag(index: number): string {
   return FLAG_MAP[keys[index % keys.length]];
 }
 
-function PortfolioCarousel({ urls, name }: { urls: string[]; name: string }) {
+function PortfolioCarousel({ urls, name, photoUrl }: { urls: string[]; name: string; photoUrl?: string }) {
   const [current, setCurrent] = useState(0);
 
   return (
@@ -78,12 +78,23 @@ function PortfolioCarousel({ urls, name }: { urls: string[]; name: string }) {
           transition={{ duration: 0.2 }}
           className="absolute inset-0 bg-sozo-cream flex items-center justify-center"
         >
-          <div className="text-center text-muted-foreground">
-            <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-3 flex items-center justify-center text-2xl font-serif">
-              {name.charAt(0)}
+          {photoUrl ? (
+            <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-6">
+              <img
+                src={photoUrl}
+                alt={name}
+                className="w-28 h-28 rounded-full object-cover ring-4 ring-white/80 shadow-lg"
+              />
+              <p className="text-sm font-medium text-muted-foreground">{name}</p>
             </div>
-            <p className="text-xs">{name}</p>
-          </div>
+          ) : (
+            <div className="text-center text-muted-foreground">
+              <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-3 flex items-center justify-center text-2xl font-serif">
+                {name.charAt(0)}
+              </div>
+              <p className="text-xs">{name}</p>
+            </div>
+          )}
         </motion.div>
       </AnimatePresence>
 
@@ -160,8 +171,12 @@ export function StylistCard({
   if (compact) {
     return (
       <div className="flex gap-4 p-4 rounded-xl bg-card ring-1 ring-foreground/10">
-        <div className="w-16 h-16 rounded-lg bg-sozo-cream shrink-0 flex items-center justify-center text-xl font-serif text-muted-foreground">
-          {stylist.name.charAt(0)}
+        <div className="w-16 h-16 rounded-lg bg-sozo-cream shrink-0 flex items-center justify-center text-xl font-serif text-muted-foreground overflow-hidden">
+          {stylist.photo_url ? (
+            <img src={stylist.photo_url} alt={stylist.name} className="w-full h-full object-cover" />
+          ) : (
+            stylist.name.charAt(0)
+          )}
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
@@ -197,6 +212,7 @@ export function StylistCard({
       <PortfolioCarousel
         urls={stylist.portfolio_urls}
         name={stylist.name}
+        photoUrl={stylist.photo_url}
       />
 
       <div className="p-5 space-y-4">
