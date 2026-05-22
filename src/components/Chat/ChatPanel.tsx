@@ -465,9 +465,9 @@ export function ChatPanel() {
       <div className="flex-1 flex min-h-0">
         {/* Chat column */}
         <div className="flex-1 flex flex-col min-w-0">
-          {/* Messages */}
           <div className="flex-1 overflow-y-auto" ref={scrollRef}>
-            <div className="max-w-2xl mx-auto p-4 space-y-5 pb-4">
+            {/* Messages */}
+            <div className="max-w-2xl mx-auto p-4 space-y-5 pb-20">
               <AnimatePresence>
                 {messageAndInlineItems()}
               </AnimatePresence>
@@ -489,43 +489,43 @@ export function ChatPanel() {
 
               {isLoading && !streamingText && <TypingIndicator />}
             </div>
-          </div>
 
-          {/* Input */}
-          <div className="border-t bg-background p-3 shrink-0">
-            <div className="max-w-2xl mx-auto">
-              <div className="flex items-end gap-2">
-                <div className="flex-1 relative">
-                  <textarea
-                    ref={inputRef}
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    placeholder="Tell me about your ideal salon visit..."
-                    rows={1}
-                    className="w-full resize-none rounded-xl border bg-muted/50 px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-sozo-blue/20 focus:border-sozo-blue/40 min-h-[42px] max-h-[120px]"
-                    style={
-                      { fieldSizing: "content" } as React.CSSProperties
-                    }
-                  />
+            {/* Input -- sticky to bottom of scroll viewport */}
+            <div className="sticky bottom-0 border-t bg-background p-3 z-10">
+              <div className="max-w-2xl mx-auto">
+                <div className="flex items-end gap-2">
+                  <div className="flex-1 relative">
+                    <textarea
+                      ref={inputRef}
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      placeholder="Tell me about your ideal salon visit..."
+                      rows={1}
+                      className="w-full resize-none rounded-xl border bg-muted/50 px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-sozo-blue/20 focus:border-sozo-blue/40 min-h-[42px] max-h-[120px]"
+                      style={
+                        { fieldSizing: "content" } as React.CSSProperties
+                      }
+                    />
+                  </div>
+                  <Button
+                    onClick={() => sendMessage(input)}
+                    disabled={!input.trim() || isLoading}
+                    size="icon"
+                    className="h-[42px] w-[42px] rounded-xl bg-sozo-blue hover:bg-sozo-blue-hover text-white shrink-0"
+                  >
+                    {isLoading ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Send className="h-4 w-4" />
+                    )}
+                  </Button>
                 </div>
-                <Button
-                  onClick={() => sendMessage(input)}
-                  disabled={!input.trim() || isLoading}
-                  size="icon"
-                  className="h-[42px] w-[42px] rounded-xl bg-sozo-blue hover:bg-sozo-blue-hover text-white shrink-0"
-                >
-                  {isLoading ? (
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                  ) : (
-                    <Send className="h-4 w-4" />
-                  )}
-                </Button>
+                <p className="text-[10px] text-muted-foreground text-center mt-2">
+                  SOZO Concierge · All recommended salons are SOZO Alliance
+                  certified
+                </p>
               </div>
-              <p className="text-[10px] text-muted-foreground text-center mt-2">
-                SOZO Concierge · All recommended salons are SOZO Alliance
-                certified
-              </p>
             </div>
           </div>
         </div>
