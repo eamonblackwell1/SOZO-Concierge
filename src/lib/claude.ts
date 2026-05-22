@@ -5,6 +5,6 @@ const anthropic = new Anthropic({
 });
 
 export const MODEL_ID =
-  process.env.CLAUDE_MODEL_ID || "claude-sonnet-4-20250514";
+  process.env.CLAUDE_MODEL_ID || "claude-opus-4-6-20260220";
 
 export { anthropic };
